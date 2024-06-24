@@ -53,3 +53,48 @@ This project is licensed under the MIT License.
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request with your improvements.
+
+
+
+
+## Disk Usage Monitoring and Backup Script
+
+This Bash script monitors disk usage for a specified directory and compresses files when usage exceeds a threshold. It also logs messages and alerts.
+
+## Features
+
+Monitors disk usage for a designated directory.
+Compresses files into a tar.gz archive when usage exceeds a configurable threshold.
+Stores compressed backups in a designated directory.
+Logs monitoring and compression activities to a file (disk_usage_alert.log).
+Sends alerts to the console for critical events.
+## Usage
+
+Edit the script:
+
+- Open the script (disk_usage_monitor.sh) in a text editor.
+- Update the following variables according to your needs:
+- MONITORED_DIR: The directory to monitor for disk usage (default: /home/pruthvibhat/dummyMonitor).
+- BACKUP_DIR: The directory to store compressed backups (default: /home/pruthvibhat/dummyBackup).
+- THRESHOLD: The disk usage threshold in percentage (default: 5).
+- LOG_FILE: The file to store log messages (default: disk_usage_alert.log).
+## Make the script executable:
+```
+chmod +x disk_usage_monitor.sh
+```
+
+## Run the script:
+```
+./disk_usage_monitor.sh
+```
+## Notes
+
+- This script requires Bash to run.
+- The script creates the backup directory ($BACKUP_DIR) if it doesn't exist.
+- Modify the script for additional features or customization as needed.
+
+## Additional Considerations
+
+- Cron Job: Schedule the script to run periodically using a cron job (e.g., hourly, daily) for continuous monitoring.
+- Email Alerts: Extend the send_alert function to send email notifications for critical events.
+- Error Handling: Consider adding more robust error handling for compression failures.
